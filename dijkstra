@@ -79,3 +79,35 @@ def dijkstra(self, source):
 
             # Remove the closest city from unvisited list
             unvisited_cities.remove(closest_city)
+
+# Update distances to neighboring cities
+            for neighbor, jarak in self.cityList[closest_city].items():
+                #jika jarak kota terdekat + weight lebih kecil dari jarak kota tetangga
+                jarakNeighbour = distances[closest_city] + jarak
+                if jarakNeighbour < distances[neighbor]:
+                    distances[neighbor] = jarakNeighbour
+
+        return distances
+    
+    def tsp(self):
+        # Initialize variables
+        jarak_terpendek = float('inf')
+        jalur_terpendek = []
+
+        # Generate all permutations of cities
+        cities = list(self.cityList.keys())
+        for path in permutations(cities):
+            # Calculate total distance for current permutation
+            total_distance = 0
+            for i in range(len(path) - 1):
+                if path[i] in self.cityList and path[i + 1] in self.cityList[path[i]]:
+                    total_distance += self.cityList[path[i]][path[i + 1]]
+                else:
+                    total_distance = float('inf')
+                    break  # Break if path is invalid
+            # Check if current permutation is shorter than the current shortest path
+            if total_distance < jarak_terpendek:
+                jarak_terpendek = total_distance
+                jalur_terpendek = path
+
+        return jalur_terpendek, jarak_terpendek
