@@ -80,7 +80,7 @@ def dijkstra(self, source):
             # Remove the closest city from unvisited list
             unvisited_cities.remove(closest_city)
 
-# Update distances to neighboring cities
+            # Update distances to neighboring cities
             for neighbor, jarak in self.cityList[closest_city].items():
                 #jika jarak kota terdekat + weight lebih kecil dari jarak kota tetangga
                 jarakNeighbour = distances[closest_city] + jarak
@@ -111,3 +111,189 @@ def dijkstra(self, source):
                 jalur_terpendek = path
 
         return jalur_terpendek, jarak_terpendek
+
+
+# Menambahkan kota-kota ke dalam peta
+Peta_Indonesia = Peta()
+Peta_Indonesia.tambahkanKota("Semarang")
+Peta_Indonesia.tambahkanKota("Surakarta")
+Peta_Indonesia.tambahkanKota("Tegal")
+Peta_Indonesia.tambahkanKota("Salatiga")
+Peta_Indonesia.tambahkanKota("Pekalongan")
+Peta_Indonesia.tambahkanKota("Magelang")
+Peta_Indonesia.tambahkanKota("Wonosobo")
+Peta_Indonesia.tambahkanKota("Purwodadi")
+Peta_Indonesia.tambahkanKota("Temanggung")
+Peta_Indonesia.tambahkanKota("Sragen")
+Peta_Indonesia.tambahkanKota("Pemalang")
+Peta_Indonesia.tambahkanKota("Rembang")
+
+# menambahkan jalan antar kota
+
+# Kota Semarang
+Peta_Indonesia.tambahkanJalan("Semarang", "Surakarta", 106)
+Peta_Indonesia.tambahkanJalan("Semarang", "Tegal", 166)
+Peta_Indonesia.tambahkanJalan("Semarang", "Salatiga", 52)
+Peta_Indonesia.tambahkanJalan("Semarang", "Pekalongan", 93)
+Peta_Indonesia.tambahkanJalan("Semarang", "Magelang", 84)
+Peta_Indonesia.tambahkanJalan("Semarang", "Wonosobo", 120)
+Peta_Indonesia.tambahkanJalan("Semarang", "Purwodadi", 62)
+Peta_Indonesia.tambahkanJalan("Semarang", "Sragen", 126)
+Peta_Indonesia.tambahkanJalan("Semarang", "Temanggung", 80)
+Peta_Indonesia.tambahkanJalan("Semarang", "Pemalang", 126)
+Peta_Indonesia.tambahkanJalan("Semarang", "Rembang", 119)
+
+# Kota Surakarta
+Peta_Indonesia.tambahkanJalan("Surakarta", "Semarang", 106)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Tegal", 256)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Salatiga", 59)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Pekalongan", 191)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Magelang", 118)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Wonosobo", 154)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Purwodadi", 68)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Temanggung", 115)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Sragen", 32)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Pemalang", 228)
+Peta_Indonesia.tambahkanJalan("Surakarta", "Rembang", 151)
+
+# Kota tegal
+Peta_Indonesia.tambahkanJalan("Tegal", "Semarang", 166)
+Peta_Indonesia.tambahkanJalan("Tegal", "Surakarta", 256)
+Peta_Indonesia.tambahkanJalan("Tegal", "Salatiga", 205)
+Peta_Indonesia.tambahkanJalan("Tegal", "Pekalongan", 66)
+Peta_Indonesia.tambahkanJalan("Tegal", "Magelang", 189)
+Peta_Indonesia.tambahkanJalan("Tegal", "Wonosobo", 172)
+Peta_Indonesia.tambahkanJalan("Tegal", "Purwodadi", 230)
+Peta_Indonesia.tambahkanJalan("Tegal", "Temanggung", 169)
+Peta_Indonesia.tambahkanJalan("Tegal", "Sragen", 270)
+Peta_Indonesia.tambahkanJalan("Tegal", "Pemalang", 32)
+Peta_Indonesia.tambahkanJalan("Tegal", "Rembang", 282)
+
+
+# Kota Salatiga
+Peta_Indonesia.tambahkanJalan("Salatiga", "Semarang", 52)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Surakarta", 59)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Tegal", 219)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Pekalongan", 145)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Magelang", 49)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Wonosobo", 95)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Purwodadi", 70)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Temanggung", 56)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Sragen", 81)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Pemalang", 178)
+Peta_Indonesia.tambahkanJalan("Salatiga", "Rembang", 175)
+
+# Kota Pekalongan
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Semarang", 93)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Surakarta", 191)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Tegal", 91)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Salatiga", 138)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Magelang", 171)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Wonosobo", 122)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Purwodadi", 158)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Temanggung", 112)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Sragen", 213)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Pemalang", 51)
+Peta_Indonesia.tambahkanJalan("Pekalongan", "Rembang", 220)
+
+
+# kota Magelang
+Peta_Indonesia.tambahkanJalan("Magelang", "Semarang", 84)
+Peta_Indonesia.tambahkanJalan("Magelang", "Surakarta", 118)
+Peta_Indonesia.tambahkanJalan("Magelang", "Tegal", 242)
+Peta_Indonesia.tambahkanJalan("Magelang", "Salatiga", 44)
+Peta_Indonesia.tambahkanJalan("Magelang", "Pekalongan", 169)
+Peta_Indonesia.tambahkanJalan("Magelang", "Wonosobo", 53)
+Peta_Indonesia.tambahkanJalan("Magelang", "Purwodadi", 113)
+Peta_Indonesia.tambahkanJalan("Magelang", "Temanggung", 23)
+Peta_Indonesia.tambahkanJalan("Magelang", "Sragen", 119)
+Peta_Indonesia.tambahkanJalan("Magelang", "Pemalang", 202)
+Peta_Indonesia.tambahkanJalan("Magelang", "Rembang", 197)
+
+# Kota Wonosobo
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Semarang", 120)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Surakarta", 154)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Tegal", 174)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Salatiga", 95)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Pekalongan", 83)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Magelang", 61)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Purwodadi", 396)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Temanggung", 31)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Sragen", 150)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Pemalang", 140)
+Peta_Indonesia.tambahkanJalan("Wonosobo", "Rembang", 235)
+
+# kota Puwordadi
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Semarang", 62)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Surakarta", 68)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Tegal", 225)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Salatiga", 67)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Pekalongan", 175)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Magelang", 108)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Wonosobo", 396)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Temanggung", 122)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Sragen", 51)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Pemalang", 200)
+Peta_Indonesia.tambahkanJalan("Purwodadi", "Rembang", 94)
+
+# Kota Sragen 
+Peta_Indonesia.tambahkanJalan("Sragen", "Semarang", 126)
+Peta_Indonesia.tambahkanJalan("Sragen", "Surakarta", 32)
+Peta_Indonesia.tambahkanJalan("Sragen", "Tegal", 157)
+Peta_Indonesia.tambahkanJalan("Sragen", "Salatiga", 66)
+Peta_Indonesia.tambahkanJalan("Sragen", "Pekalongan", 100)
+Peta_Indonesia.tambahkanJalan("Sragen", "Magelang", 33)
+Peta_Indonesia.tambahkanJalan("Sragen", "Wonosobo", 150)
+Peta_Indonesia.tambahkanJalan("Sragen", "Purwodadi", 51)
+Peta_Indonesia.tambahkanJalan("Sragen", "Temanggung", 122)
+Peta_Indonesia.tambahkanJalan("Sragen", "Pemalang", 126)
+Peta_Indonesia.tambahkanJalan("Sragen", "Rembang", 204)
+
+# Temanggung 
+Peta_Indonesia.tambahkanJalan("Temanggung", "Semarang", 80)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Surakarta", 115)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Tegal", 157)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Salatiga", 66)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Pekalongan", 100)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Magelang", 33)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Wonosobo", 31)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Purwodadi", 122)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Sragen", 122)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Pemalang", 126)
+Peta_Indonesia.tambahkanJalan("Temanggung", "Rembang", 204)
+
+# kota Pemalang 
+Peta_Indonesia.tambahkanJalan("Pemalang", "Semarang", 126)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Surakarta", 228)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Tegal", 59)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Salatiga", 183)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Pekalongan", 29)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Magelang", 159)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Wonosobo", 140)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Purwodadi", 200)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Temanggung", 126)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Sragen", 126)
+Peta_Indonesia.tambahkanJalan("Pemalang", "Rembang", 279)
+
+# Rembang
+Peta_Indonesia.tambahkanJalan("Rembang", "Semarang", 119)
+Peta_Indonesia.tambahkanJalan("Rembang", "Surakarta", 151)
+Peta_Indonesia.tambahkanJalan("Rembang", "Tegal", 299)
+Peta_Indonesia.tambahkanJalan("Rembang", "Salatiga", 157)
+Peta_Indonesia.tambahkanJalan("Rembang", "Pekalongan", 249)
+Peta_Indonesia.tambahkanJalan("Rembang", "Magelang", 198)
+Peta_Indonesia.tambahkanJalan("Rembang", "Wonosobo", 235)
+Peta_Indonesia.tambahkanJalan("Rembang", "Purwodadi", 94)
+Peta_Indonesia.tambahkanJalan("Rembang", "Temanggung", 196)
+Peta_Indonesia.tambahkanJalan("Rembang", "Sragen", 121)
+Peta_Indonesia.tambahkanJalan("Rembang", "Pemalang", 253)
+
+# Mengeprint peta
+Peta_Indonesia.printPeta()
+jarakterpendek = Peta_Indonesia.dijkstra("Semarang") # Menghitung jarak terpendek dari suatu kota ke kota lainnya
+print("Jarak terpendek dari kota Semarang ke kota yang lain:")
+for city, distance in jarakterpendek.items():
+    print(city, "Adalah", distance, "KM")
+jalur_terpendek, jarak_terpendek = Peta_Indonesia.tsp() # Menghitung jalur terpendek yang mengunjungi semua kota sekali dan kembali ke kota awal
+print("Shortest TSP path:", jalur_terpendek)
+print("Shortest TSP distance:", jarak_terpendek)
