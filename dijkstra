@@ -1,0 +1,50 @@
+from itertools import permutations
+
+class Peta:
+    def __init__(self):
+        self.cityList = {}
+    
+    def printPeta(self):
+        for kota in self.cityList: # mencetak seluruh informasi tentang peta
+            print(kota, ":",self.cityList[kota])
+            for neighbor, distance in self.cityList[kota].items():
+                print("    ->", neighbor,":",distance)
+        
+    def tambahkanKota(self,kota):
+        #jika kota tidak ada di cityList
+        if kota not in self.cityList:
+            #maka tambahkan kota
+            self.cityList[kota] = {}
+            return True
+        return False
+    
+    def hapusKota(self,kotaDihapus):
+        #cek apakah kota yang ingin dihapus ada di list
+        if kotaDihapus in self.cityList:
+            # Remove the city from the city list
+            del self.cityList[kotaDihapus]
+            # Remove references to the deleted city from other cities
+            for kota in self.cityList:
+                #jika kotaDihapus ada di cityList[kota]
+                if kotaDihapus in self.cityList[kota]:
+                    #maka hapus kotaDihapus
+                    del self.cityList[kota][kotaDihapus]
+            return True
+        return False
+    
+    def tambahkanJalan(self,kota1,kota2,jarak):
+        if kota1 in self.cityList and kota2 in self.cityList:
+            #masukkan kota 1 di list kota2
+            self.cityList[kota2][kota1] = jarak
+            #masukkan kota 2 di list kota1
+            self.cityList[kota1][kota2] = jarak
+            return True
+        return False
+    
+    def hapusJalan(self,kota1,kota2):
+        if kota1 in self.cityList and kota2 in self.cityList: # Menghapus jalan yang menghubungkan kota1 dan kota2
+            if kota2 in self.cityList[kota1]:
+                del self.cityList[kota1][kota2]
+                del self.cityList[kota2][kota1]
+                return True
+        return False
